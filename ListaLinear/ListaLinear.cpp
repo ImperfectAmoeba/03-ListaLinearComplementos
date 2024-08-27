@@ -122,9 +122,32 @@ void inserirElemento()
 
 void excluirElemento()
 {
+	//VARIAVEIS
+	int nDeletar;
+	bool deletado = false;
 
+	//PROGRAMA IRA PEDIR PARA O USUARIO O VALOR A SER DELETADO
+	cout << "Digite o valor que deseja excluir: ";
 
+	//USUARIO IRA DIGITAR O VALOR QUE QUER RETIRAR
+	cin >> nDeletar;
+
+	//PROGRAMA IRA PROCURAR ESTE VALOR NA LISTA
+	int pos = posicaoElemento(nDeletar);
+
+	if (pos != -1) {
+		for (int i = nDeletar; i < nElementos - 1; i++) {
+			lista[i] = lista[i + 1];
+		}
+		deletado = true;
+		cout << "O elemento foi Eliminado." << endl;
+	}
+	else
+	{
+		cout << "O elemento digitado nao foi encontrado" << endl;
+	}
 }
+
 
 void buscarElemento()
 {
